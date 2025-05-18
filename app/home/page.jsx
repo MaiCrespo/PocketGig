@@ -35,7 +35,7 @@ const gigCategories = [
     gigs: [
       { title: "Cleaning apartments", image: "/cleaning-apartments.jpg" },
       { title: "Washing windows", image: "/washing-windows.jpg" },
-      { title: "Cleaning apartments", image: "/cleaning-apartments2.jpg" },
+      { title: "Vacuuming apartments", image: "/vacuuming-apartments.jpg" },
     ],
   },
   {
@@ -50,7 +50,7 @@ const gigCategories = [
     title: "Mounting",
     gigs: [
       { title: "Window Installation", image: "/window-installation.jpg" },
-      { title: "TV Mounting", image: "/tv-mounting.jpg" },
+      { title: "TV Mounting", image: "/tv-mounting2.jpg" },
       { title: "Moving boxes", image: "/moving-boxes.jpg" },
     ],
   },
@@ -70,9 +70,7 @@ export default function HomeMobile() {
           <ActivityCard key={i} {...a} />
         ))}
         <div className="flex justify-end mb-4">
-          <button className="text-sm text-blue-500 underline">
-            See more...
-          </button>
+          <button className="text-sm text-black">See more...</button>
         </div>
       </div>
       <div className="px-4 mt-2">
