@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Button = ({
   label = "Button",
   variant = "primary",
-  color = "#ocean-blue",
+  color =  "var(--ocean-blue)",
   onClick = () => {},
   href,
-  textColor = "#ffffff",
+  textColor =  "var(--white)",
   border = "none",
-  borderRadius = "12px",
+  borderRadius = "8px",
   showOverlay = false,
   overlayContent = "Overlay Content",
   size = "lg",
@@ -54,16 +54,13 @@ const Button = ({
         width: "auto",
         height:"32px",
         borderRadius:"8px",
-        fontSize:"none",
-        svgicon:"{none}",
+  
       },
 
       lg:{
         width: "392px",
         height:"56px",
         borderRadius:"8px",
-        fontSize:"none",
-        svgicon:"{none}",
       },
     };
   
@@ -88,6 +85,35 @@ const Button = ({
       fontFamily: "var(--font-family)",
       transition: "all 0.2s ease",
     };
-   }
   };
+
+  const buttonContent = (
+    <>
+      {icon && <span style={{ marginRight: label ? "8px" : 0 }}>{icon}</span>}
+      {label}
+    </>
+  );
+
+  // Render as link or button //
+  if (href) {
+    return (
+      <a
+        href={href}
+        style={getButtonStyles()}
+      >
+        {buttonContent}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      style={getButtonStyles()}
+      onClick={onClick}
+    >
+      {buttonContent}
+    </button>
+  );
+};
+
    export default Button;
