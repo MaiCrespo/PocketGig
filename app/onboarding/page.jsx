@@ -11,11 +11,15 @@ export default function OnboardingPage (){
 
         <div className="OnboardingBackground" background="img/">
             
-            <p className="">The marketplace where those who need</p>
-            <p className="">it done, meet those who get it done.</p>
-           <Button 
-             label="Continue">
-           </Button>
+            <p className="">The marketplace where those who need it done, meet those who get it done.</p>
+
+            <ButttonContainer>
+                <Button 
+                    label="Continue">
+                    onClick={() => Router.push("/onboarding/roles")}
+                </Button>
+            </ButttonContainer>
+           
 
         </div>
     ); 
