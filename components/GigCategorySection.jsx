@@ -1,5 +1,5 @@
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export default function GigCategorySection({ title, gigs }) {
   return (
@@ -10,17 +10,26 @@ export default function GigCategorySection({ title, gigs }) {
       </div>
       <div className="flex gap-3 overflow-x-auto pb-2">
         {gigs.map((gig, idx) => (
-          <div key={idx} className="relative min-w-[120px] h-[110px] rounded-xl overflow-hidden shadow-sm bg-white">
-            <img src={gig.image} alt={gig.title} className="w-full h-full object-cover" />
-            <div className="absolute top-2 right-2 bg-white bg-opacity-80 rounded-full p-1">
+          <div
+            key={idx}
+            className="relative min-w-[120px] h-[110px] rounded-xl overflow-hidden shadow-sm bg-white"
+          >
+            <img
+              src={gig.image}
+              alt={gig.title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#003459] to-transparent p-2">
               <FavoriteBorderIcon className="text-gray-500" fontSize="small" />
             </div>
-            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-2">
-              <span className="text-white text-xs font-semibold drop-shadow">{gig.title}</span>
+            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#003459] to-transparent p-2">
+              <span className="text-white text-xs font-semibold drop-shadow">
+                {gig.title}
+              </span>
             </div>
           </div>
         ))}
       </div>
     </section>
   );
-} 
+}
