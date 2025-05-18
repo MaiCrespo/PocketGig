@@ -16,7 +16,7 @@ export default function OnboardingPage (){
             <ButttonContainer>
                 <Button 
                     label="Continue">
-                    onClick={() => Router.push("/onboarding/roles")}
+                    onClick={() => Router.push("/onboarding/step2")}
                 </Button>
             </ButttonContainer>
            
