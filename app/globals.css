@@ -3,6 +3,22 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+    --ocean-blue: #003459;
+    --aqua-blue:#00A8E8;
+    --teal-blue:#007EA7;
+    --midnight:#00171F;
+    --white:#FFFFFF;
+    --baby-blue:#E4F5FF;
+    --chip-blue:#E0ECF3;
+    --borders:#90B0BB;
+    --yellow-warning:#CBA134;
+    --active-green:#129714;
+    --inner-blue:#A3C9DD;
+    --yellow-dark:#866A24;
+    --yellow-overlay:#FFF3CD;
+    --red-error:#DB2F2F;
+    --light-red-error:#FF9191;
+    --dark-red-error:#753434; 
 }
 
 @theme inline {
@@ -16,6 +32,7 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
   }
 }
 
@@ -24,3 +41,6 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
