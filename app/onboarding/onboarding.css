@@ -1,7 +1,7 @@
-
 .buttonContainer{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-top:24px;
     padding-bottom: 24px; 
 }
