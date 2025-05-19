@@ -23,7 +23,33 @@ export default function Step2Page() {
             />
             <div className="roleContainer">
                 
+    
+            <div className="roleBox">
+                 <Image
+                    src="/images/clipboard.svg"
+                    alt="clipboard icon"
+                    width={60}
+                    height={70}
+                    />
+                    <h3>Gig Assigners</h3>
+                    <p>Create Gig Posts to hire out tasks</p>
+             </div>
+            
+             <div className="roleBox">
+                    <Image
+                        src="/images/search.svg"
+                        alt="clipboard icon"
+                        width={60}
+                        height={70}
+                        />
+                    <h3>Gig Seekers</h3>
+                    <p>Get paid to do approved tasks</p>
+           </div>
+             
             </div>
+
+            
+           
             <div className="buttonContainer">
                 <Button 
                     label="Continue"
