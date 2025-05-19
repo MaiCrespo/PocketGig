@@ -12,6 +12,18 @@ export default function Step2Page() {
     return(
         <div className="OnboardingBackground">
             <div className="gradient-overlay"></div> 
+
+            <Image 
+                src="/images/lgWhiteLogo.svg"
+                alt="PocketGig Logo"
+                width={300}
+                height={100}
+                className="logo"
+                priority
+            />
+            <div className="roleContainer">
+                
+            </div>
             <div className="buttonContainer">
                 <Button 
                     label="Continue"
