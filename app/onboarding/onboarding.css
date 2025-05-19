@@ -48,7 +48,7 @@
 }
 
 p{
-    color: white;
+    color: var(--ocean-blue);
     font-size: 16px;
     text-align: center;
     position: relative;
