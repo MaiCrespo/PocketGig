@@ -16,11 +16,15 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      <Tabs />
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white">
+        <div className="max-w-sm mx-auto">
+          <Header />
+          <Tabs />
+        </div>
+      </div>
 
       {/* My Activity Section */}
-      <section className="p-4">
+      <section className="p-4 mt-24">
         <h2 className="text-lg font-bold mb-2 text-gray-800">My Activity</h2>
         <p className="text-sm text-gray-500 mb-4">Most Recent</p>
         <div className="flex flex-col items-center text-center text-gray-500">
@@ -49,7 +53,7 @@ export default function Home() {
         </div>
 
         {/* Scrollable Cards Section */}
-        <div className="space-y-4 mt-4 overflow-y-auto h-full">
+        <div className="space-y-4 mt-4 overflow-y-auto">
           {mockSeekerData.map((seeker) => {
             return (
               <SeekerCard
@@ -65,7 +69,7 @@ export default function Home() {
         </div>
         <button
           onClick={() => router.push("/gig-posting")}
-          className=" mb-18 absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded-2xl shadow-lg w-70 h-10 z-10 cursor-pointer"
+          className="fixed bottom-20 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 rounded-2xl shadow-lg w-70 h-10 z-10 cursor-pointer"
         >
           Create Gig
         </button>

@@ -5,7 +5,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 
 export default function BottomNav() {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 mx-auto max-w-sm bg-white shadow-md flex justify-around py-3">
+    <nav className="fixed bottom-0 left-0 right-0 mx-auto max-w-sm bg-white shadow-md flex justify-around py-3 z-50 border-t border-gray-200">
       <button className="text-blue-500 flex flex-col items-center">
         <HomeOutlinedIcon />
         <p className="text-xs">Home</p>
