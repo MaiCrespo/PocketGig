@@ -14,7 +14,7 @@ export default function OnboardingPage (){
             
             <p className="">The marketplace where those who need it done, meet those who get it done.</p>
 
-            <div className="butttonContainer">
+            <div className="buttonContainer">
                 <Button 
                     label="Continue">
                     onClick={() => Router.push("/onboarding/step2")}
