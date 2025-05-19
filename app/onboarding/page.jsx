@@ -10,7 +10,8 @@ export default function OnboardingPage (){
     
     return(
         <div className="OnboardingBackground" background="img/">
-            <p className="">The marketplace where those who need it done, meet those who get it done.</p>
+           
+            <p>The marketplace where those who need <br/> it done, meet those who get it done.</p>
 
             <div className="buttonContainer">
                 <Button 
