@@ -60,8 +60,8 @@ const Button = ({
       },
 
       lg:{
-        width: "360px",
-        height:"56px",
+        width: "358px",
+        height:"48px",
         borderRadius:"8px",
       },
     };
