@@ -3,6 +3,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Button from "@/components/Button/button";
 import styles from "@/app/globals.css"
+import "@/app/onboarding/onboarding.css";
 
 
 
@@ -13,12 +14,12 @@ export default function OnboardingPage (){
             
             <p className="">The marketplace where those who need it done, meet those who get it done.</p>
 
-            <ButttonContainer>
+            <div className="butttonContainer">
                 <Button 
                     label="Continue">
                     onClick={() => Router.push("/onboarding/step2")}
                 </Button>
-            </ButttonContainer>
+            </div>
            
 
         </div>
