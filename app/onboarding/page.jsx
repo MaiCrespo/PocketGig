@@ -10,7 +10,7 @@ export default function OnboardingPage (){
     const router = useRouter();
     
     return(
-        <div className="OnboardingBackground" background="img/">
+        <div className="OnboardingBackground">
             <Image 
                 src="/images/lgWhiteLogo.svg"
                 alt="PocketGig Logo"
