@@ -1,3 +1,6 @@
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import TopNav from "@/components/TopNav";
 import RoleTabs from "@/components/RoleTabs";
 import ActivityCard from "@/components/ActivityCard";
@@ -29,36 +32,57 @@ const activities = [
   },
 ];
 
-const gigCategories = [
+const initialGigCategories = [
   {
     title: "Cleaning",
     gigs: [
-      { title: "Cleaning apartments", image: "/cleaning-apartments.jpg" },
-      { title: "Washing windows", image: "/washing-windows.jpg" },
-      { title: "Vacuuming apartments", image: "/vacuuming-apartments.jpg" },
+      { title: "Cleaning apartments", image: "/cleaning-apartments.jpg", isFavorite: false },
+      { title: "Washing windows", image: "/washing-windows.jpg", isFavorite: false },
+      { title: "Vacuuming apartments", image: "/vacuuming-apartments.jpg", isFavorite: false },
     ],
   },
   {
     title: "Gardening",
     gigs: [
-      { title: "Backyard garden Design", image: "/garden-design.jpg" },
-      { title: "Flowers Watering", image: "/flowers-watering.jpg" },
-      { title: "Trees Cutting", image: "/trees-cutting.jpg" },
+      { title: "Backyard garden Design", image: "/garden-design.jpg", isFavorite: false },
+      { title: "Flowers Watering", image: "/flowers-watering.jpg", isFavorite: false },
+      { title: "Trees Cutting", image: "/trees-cutting.jpg", isFavorite: false },
     ],
   },
   {
     title: "Mounting",
     gigs: [
-      { title: "Window Installation", image: "/window-installation.jpg" },
-      { title: "TV Mounting", image: "/tv-mounting2.jpg" },
-      { title: "Moving boxes", image: "/moving-boxes.jpg" },
+      { title: "Window Installation", image: "/window-installation.jpg", isFavorite: false },
+      { title: "TV Mounting", image: "/tv-mounting2.jpg", isFavorite: false },
+      { title: "Moving boxes", image: "/moving-boxes.jpg", isFavorite: false },
     ],
   },
 ];
 
 export default function HomeMobile() {
+  const router = useRouter();
+  const [gigCategories, setGigCategories] = useState(initialGigCategories);
+
+  const handleCategoryClick = (categoryTitle) => {
+    if (categoryTitle === "Mounting") {
+      router.push("/gigs/tv-mounting");
+    }
+  };
+
+  const handleFavoriteToggle = (categoryIndex, gigIndex) => {
+    setGigCategories((prevGigCategories) => {
+      const newGigCategories = [...prevGigCategories];
+      const category = { ...newGigCategories[categoryIndex] };
+      const gigs = [...category.gigs];
+      gigs[gigIndex] = { ...gigs[gigIndex], isFavorite: !gigs[gigIndex].isFavorite };
+      category.gigs = gigs;
+      newGigCategories[categoryIndex] = category;
+      return newGigCategories;
+    });
+  };
+
   return (
-    <div className="bg-[#F8FAFC] flex flex-col pb-20">
+    <div className="bg-[#F8FAFC] flex flex-col pb-20 pt-16">
       <TopNav />
       <RoleTabs />
       <div className="px-4">
@@ -81,8 +105,14 @@ export default function HomeMobile() {
             <TuneIcon className="text-gray-600" />
           </button>
         </div>
-        {gigCategories.map((cat, i) => (
-          <GigCategorySection key={i} title={cat.title} gigs={cat.gigs} />
+        {gigCategories.map((cat, categoryIndex) => (
+          <GigCategorySection
+            key={categoryIndex}
+            title={cat.title}
+            gigs={cat.gigs}
+            onClick={() => handleCategoryClick(cat.title)}
+            onFavorite={(gigIndex) => handleFavoriteToggle(categoryIndex, gigIndex)}
+          />
         ))}
       </div>
       <div className="fixed bottom-0 left-0 w-full z-50">
