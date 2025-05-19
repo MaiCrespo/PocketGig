@@ -118,3 +118,8 @@ const Button = ({
 };
 
    export default Button;
+
+   const ButttonContainer = ({
+    paddingTop:"24px",
+    paddingBottom:"24px",
+   })
