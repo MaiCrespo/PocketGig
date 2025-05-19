@@ -11,6 +11,7 @@ export default function OnboardingPage (){
     
     return(
         <div className="OnboardingBackground">
+            <div className="gradient-overlay"></div>
             <Image 
                 src="/images/lgWhiteLogo.svg"
                 alt="PocketGig Logo"
