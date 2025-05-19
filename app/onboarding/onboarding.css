@@ -5,6 +5,15 @@
     padding-top:24px;
     padding-bottom: 24px; 
 }
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
 p{
     color:var(--ocean-blue);
     font-size: 16px;
