@@ -2,6 +2,7 @@
 import React from "react";
 
 const Button = ({
+  display="inline-flex",
   label = "Button",
   variant = "primary",
   color =  "var(--ocean-blue)",
@@ -118,8 +119,3 @@ const Button = ({
 };
 
    export default Button;
-
-   const ButttonContainer = ({
-    paddingTop:"24px",
-    paddingBottom:"24px",
-   })
