@@ -19,6 +19,13 @@
     --red-error:#DB2F2F;
     --light-red-error:#FF9191;
     --dark-red-error:#753434; 
+<<<<<<< HEAD
+=======
+  
+}
+
+@theme inline {
+>>>>>>> ecd6574 (login page stylin)
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans, Arial, sans-serif);

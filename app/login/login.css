@@ -1,0 +1,42 @@
+.LoginImage{
+    width: 100%;
+    height: 430px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    background-image: url('/images/helping.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.LoginBackground{
+background-color: var(--white);
+width: 100%;
+height: 100%;
+position: relative;
+display: flex;
+flex-direction: column;
+
+}
+h2{
+    font-size:24px; 
+    font-weight:semibold;
+    padding-left: 16px;
+    padding-top: 10px;
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    margin-top:10px;
+    margin-Bottom:10px;
+}
+TextFeild{
+    border: 1px solid var(--teal-blue);
+}
