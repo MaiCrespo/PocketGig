@@ -51,7 +51,7 @@ export default function LoginPage(){
                     variant="babyButtonOutline"
                     border="1px solid var(--teal-blue)"
                     textColor="var(--teal-blue)"
-                    onClick={() => router.push("/account-creation")}
+                    onClick={() => router.push("./account-creation")}
                     />
 
 
