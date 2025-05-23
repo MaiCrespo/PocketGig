@@ -5,11 +5,23 @@ import Image from "next/image";
 import Button from "@/components/Button/button";
 import styles from "@/app/globals.css"
 import "@/app/onboarding/onboarding.css";
+import InputField from "@/components/InputField";
 
 export default function OnboardingPage (){
     const router = useRouter();
     
     return(
+         
+            <div>
+                <InputField
+                    label="Email"
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </div>
+
         <div className="OnboardingBackground">
             <div className="gradient-overlay"></div>
             <Image 

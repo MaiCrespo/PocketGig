@@ -37,6 +37,15 @@ button{
     margin-top:10px;
     margin-Bottom:10px;
 }
-TextFeild{
+
+
+.inputField{
     border: 1px solid var(--teal-blue);
+    width: 358px;
+    height: 48px;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
+    

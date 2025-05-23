@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "@/components/Button/button";
 import styles from "@/app/globals.css"
 import "@/app/onboarding/step2/step2.css";
+import InputField from "@/components/InputField";
 
 export default function Step2Page() {
     const router = useRouter();
@@ -13,6 +14,7 @@ export default function Step2Page() {
         <div className="OnboardingBackground">
             <div className="gradient-overlay"></div> 
 
+    
             <Image 
                 src="/images/lgWhiteLogo.svg"
                 alt="PocketGig Logo"

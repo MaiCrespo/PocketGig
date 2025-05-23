@@ -1,11 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Button from "@/components/Button/button";
 import TextField from "@/components/TextFeild/TextFeild";
 import styles from "@/app/globals.css"
 import "@/app/login/login.css";
+import InputField from "@/components/InputField";
 export default function LoginPage(){
     const router = useRouter();
     return(
@@ -17,15 +18,29 @@ export default function LoginPage(){
             <div className="inputContainer">
 
         
-                <TextField className="inputField">
-                    <label>Email</label>
-                    <input type="email" placeholder="Enter Email..." />
-                </TextField>
+                <InputField className="inputField"
+                    style={{
+                        width: "358px", 
+                        height: "48px", 
+                        borderRadius: "8px", 
+                        padding: "16px", 
+                        marginBottom: "10px", 
+                        marginTop: "10px",
+                        backgroundColor: "var(--chip-blue)",
+                        border: "1px solid var(--inner-blue)"
+                    }}
+                    label="Email"
+                    type="email"
+                    placeholder="Enter Email..."
+                />
+                <InputField 
+                    className="inputField"
+                    style={{ width:"358px",  height:"48px"}}
+                    label="Password"
+                    type="password"
+                    placeholder="Enter Password..."
+                />
 
-                <TextField className="inputField">
-                    <label>Password</label>
-                    <input type="Password" placeholder="Enter Password..." />
-                </TextField>
                 <div className="buttonContainer">
                     <Button
                     label="Sign-In"
