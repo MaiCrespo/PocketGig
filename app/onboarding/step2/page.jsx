@@ -53,7 +53,7 @@ export default function Step2Page() {
             <div className="buttonContainer">
                 <Button 
                     label="Continue"
-                    onClick={() => router.push("/onboarding/login")}
+                    onClick={() => router.push("/login")}
                 />
             </div>
         </div>
