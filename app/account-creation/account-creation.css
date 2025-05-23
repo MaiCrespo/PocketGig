@@ -1,0 +1,12 @@
+.inputContainer {
+    width: 368px;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.account-creation-form{
+    align-items: center;
+}
