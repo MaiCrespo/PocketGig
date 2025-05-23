@@ -24,18 +24,37 @@ export default function AccountCreationPage(){
                 <div className="inputContainer">
 
                     <InputField id="firstName" label="First Name" sx={{width: "100%", maxWidth: "358px"}}>
-                        <input type="text" placeholder="Enter First Name..." />
+                        <input 
+                        type="text" 
+                        placeholder="Enter First Name..."
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                         />
                     </InputField>
 
                     <InputField id="lastName" label="Last Name" sx={{width: "100%", maxWidth: "358px"}}>
-                        <input type="text" placeholder="Enter Last Name..." />
+                        <input
+                          type="text"
+                           placeholder="Enter Last Name..."
+                           value={lastName}
+                           onChange={(e) => setLastName(e.target.value)}
+                            />
                     </InputField>
 
-                    <InputField id="email" label="Email" sx={{width: "100%", maxWidth: "358px"}}>
-                        <input type="email" placeholder="Enter Email..." />
+                    <InputField
+                     id="email" 
+                     label="Email" 
+                     sx={{width: "100%", maxWidth: "358px"}}>
+                        <input type="email" placeholder="Enter Email..." 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        />
                     </InputField> 
                     <InputField id="phoneNumber" label="Phone Number" sx={{width: "100%", maxWidth: "358px",}}>
-                        <input type="tel" placeholder="Enter Phone Number..." />
+                        <input type="tel" placeholder="Enter Phone Number..." 
+                        value={phoneNumber}
+                        onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
                     </InputField>
                     <InputField id="password" label="Password" sx={{width: "100%", maxWidth: "358px",}}>
                         <input type="password" placeholder="Enter Password..." />
