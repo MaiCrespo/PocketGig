@@ -34,7 +34,7 @@ export default function LoginPage(){
                     <input type="email" placeholder="Enter Email..." />
                 </InputField> 
 
-                <InputField id="password" label="Password" sx={{width: "100%", maxWidth: "358px", marginTop: "5px"}}>
+                <InputField id="password" label="Password" sx={{width: "100%", maxWidth: "358px",}}>
                     <input type="password" placeholder="Enter Password..." />
                 </InputField> 
             </div>
@@ -51,7 +51,7 @@ export default function LoginPage(){
                     variant="babyButtonOutline"
                     border="1px solid var(--teal-blue)"
                     textColor="var(--teal-blue)"
-                    onClick={() => router.push("/home")}
+                    onClick={() => router.push("/account-creation")}
                     />
 
 
