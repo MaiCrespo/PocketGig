@@ -31,6 +31,12 @@ export default function AccountCreationPage(){
                         onChange={(e) => setFirstName(e.target.value)}
                          />
                     </InputField>
+                    {firstNameError && (
+                        <div style={{color: 'var(--red)', fontSize: '12px', marginLeft: '14px'}}>
+                            {firstNameError}
+                        </div>
+                    )}
+   
 
                     <InputField id="lastName" label="Last Name" sx={{width: "100%", maxWidth: "358px"}}>
                         <input
@@ -41,20 +47,11 @@ export default function AccountCreationPage(){
                             />
                     </InputField>
 
-                    <InputField
-                     id="email" 
-                     label="Email" 
-                     sx={{width: "100%", maxWidth: "358px"}}>
-                        <input type="email" placeholder="Enter Email..." 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        />
+                    <InputField Id="email" label="Email" sx={{width: "100%", maxWidth: "358px"}}>
+                        <input type="email" placeholder="Enter Email..." />
                     </InputField> 
                     <InputField id="phoneNumber" label="Phone Number" sx={{width: "100%", maxWidth: "358px",}}>
-                        <input type="tel" placeholder="Enter Phone Number..." 
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                        />
+                        <input type="tel" placeholder="Enter Phone Number..." />
                     </InputField>
                     <InputField id="password" label="Password" sx={{width: "100%", maxWidth: "358px",}}>
                         <input type="password" placeholder="Enter Password..." />
