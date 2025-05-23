@@ -8,7 +8,6 @@ import Button from "@/components/Button/button.jsx";
 import { useRouter } from "next/navigation";
 import WelcomeMessage from "@/components/welcomeMessage";
 
-
 export default function AccountCreationPage(){
     const router = useRouter();
     const [firstName, setFirstName] = useState("");
@@ -18,6 +17,7 @@ export default function AccountCreationPage(){
     const [password, setPassword] = useState("");
     const [retypePassword, setRetypePassword] = useState("");
     const [firstNameError, setFirstNameError] = useState("");
+    const [showWelcome, setShowWelcome] = useState(false);
 
     const validateFirstName = (value) => {
         if (!value.trim()) {
@@ -29,13 +29,60 @@ export default function AccountCreationPage(){
         }
     };
 
+    const handleCreateAccount = () => {
+        if (!firstName.trim()) {
+            setFirstNameError('First name is required');
+            return;
+        }
+        setShowWelcome(true);
+        // After 2 seconds, navigate to home page
+        setTimeout(() => {
+            router.push(`/home?welcome=true&firstName=${firstName}`);
+        }, 2000);
+    };
+
     return(
         <div className="account-creation-page" style={{backgroundColor: "var(--white)"}}>
-               <TopNav hideIcons={true} />
+            {showWelcome && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    zIndex: 1000
+                }}>
+                    <div style={{
+                        backgroundColor: 'var(--white)',
+                        padding: '30px',
+                        borderRadius: '15px',
+                        textAlign: 'center',
+                        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+                    }}>
+                        <h2 style={{
+                            color: 'var(--teal-blue)',
+                            fontSize: '24px',
+                            marginBottom: '10px'
+                        }}>
+                            Welcome to PocketGig, {firstName}!
+                        </h2>
+                        <p style={{
+                            color: 'var(--dark-gray)',
+                            fontSize: '16px'
+                        }}>
+                            Your account has been created successfully.
+                        </p>
+                    </div>
+                </div>
+            )}
+            <TopNav hideIcons={true} />
             <h1 style={{fontSize: "30px", fontWeight: "medium", marginLeft: "14px", marginTop: "90px"}}>Account Creation</h1>
             <div className="account-creation-form"  style={{display: "flex", flexDirection: "column",  height: "100vh", marginTop: "30px",}}>
                 <div className="inputContainer">
-
                     <InputField id="firstName" label="First Name" sx={{width: "100%", maxWidth: "358px"}}>
                         <input 
                         type="text" 
@@ -92,13 +139,7 @@ export default function AccountCreationPage(){
             <div className="buttonContainer">
                 <Button 
                     label="Create Account"
-                    onClick={() => {
-                        if (!firstName.trim()) {
-                            setFirstNameError('First name is required' );
-                            return;
-                        }
-                        router.push(`/home?welcome=true&firstName=${firstName}`);
-                    }}
+                    onClick={handleCreateAccount}
                 />
             </div>
        </div>
