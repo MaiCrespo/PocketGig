@@ -42,8 +42,13 @@ export default function AccountCreationPage(){
                         placeholder="Enter First Name..."
                         value={firstName}
                         onChange={(e) => {
-                            setFirstName(e.target.value);
-                            validateFirstName(e.target.value);
+                            const newValue = e.target.value;
+                            setFirstName(newValue);
+                            if (newValue.trim().length >= 2) {
+                                setFirstNameError("");
+                            } else {
+                                validateFirstName(newValue);
+                            }
                         }}
                          />
                     </InputField>
