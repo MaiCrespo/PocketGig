@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import React from "react";
 import TopNav from "@/components/TopNav";
 import InputField from "@/components/InputField";
@@ -6,6 +7,7 @@ import "@/app/account-creation/account-creation.css";
 import Button from "@/components/Button/button.jsx";
 import { useRouter } from "next/navigation";
 import WelcomeMessage from "@/components/welcomeMessage";
+
 
 export default function AccountCreationPage(){
     const router = useRouter();
@@ -15,6 +17,17 @@ export default function AccountCreationPage(){
     const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
     const [retypePassword, setRetypePassword] = useState("");
+    const [firstNameError, setFirstNameError] = useState("");
+
+    const validateFirstName = (value) => {
+        if (!value.trim()) {
+            setFirstNameError("First name is required");
+        } else if (value.length < 2) {
+            setFirstNameError("First name must be at least 2 characters");
+        } else {
+            setFirstNameError("");
+        }
+    };
 
     return(
         <div className="account-creation-page" style={{backgroundColor: "var(--white)"}}>
@@ -28,11 +41,20 @@ export default function AccountCreationPage(){
                         type="text" 
                         placeholder="Enter First Name..."
                         value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
+                        onChange={(e) => {
+                            setFirstName(e.target.value);
+                            validateFirstName(e.target.value);
+                        }}
                          />
                     </InputField>
                     {firstNameError && (
-                        <div style={{color: 'var(--red)', fontSize: '12px', marginLeft: '14px'}}>
+                        <div style={{
+                            color: 'var(--red-error)',
+                            fontSize: '12px',
+                            marginLeft: '14px',
+                            marginTop: '-20px',
+                            marginBottom: '10px'
+                        }}>
                             {firstNameError}
                         </div>
                     )}
@@ -63,9 +85,16 @@ export default function AccountCreationPage(){
 
             </div>
             <div className="buttonContainer">
-            <Button 
-            label={"Create Account"}
-            onClick={() => router.push("/welcomeMessage")}/>
+                <Button 
+                    label="Create Account"
+                    onClick={() => {
+                        if (!firstName.trim()) {
+                            setFirstNameError('First name is required' );
+                            return;
+                        }
+                        router.push(`/home?welcome=true&firstName=${firstName}`);
+                    }}
+                />
             </div>
        </div>
     
