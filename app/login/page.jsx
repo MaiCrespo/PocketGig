@@ -12,7 +12,7 @@ export default function LoginPage(){
     const router = useRouter();
     return(
     
-        <div className="LoginBackground">
+        <div className="LoginBackground" style={{backgroundColor: "var(--white)"}}>
             <div className="gradient-overlay"></div>
              <div className="LoginImage">
                 <div className="logo-container">
