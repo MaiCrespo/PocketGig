@@ -22,16 +22,19 @@ export default function AccountCreationPage(){
     const validateFirstName = (value) => {
         if (!value.trim()) {
             setFirstNameError("First name is required");
+            return false;
         } else if (value.length < 2) {
             setFirstNameError("First name must be at least 2 characters");
+            return false;
         } else {
             setFirstNameError("");
+            return true;
         }
     };
 
     const handleCreateAccount = () => {
-        if (!firstName.trim()) {
-            setFirstNameError('First name is required');
+        const isValid = validateFirstName(firstName);
+        if (!isValid) {
             return;
         }
         setShowWelcome(true);
@@ -91,11 +94,7 @@ export default function AccountCreationPage(){
                         onChange={(e) => {
                             const newValue = e.target.value;
                             setFirstName(newValue);
-                            if (newValue.trim().length >= 2) {
-                                setFirstNameError("");
-                            } else {
-                                validateFirstName(newValue);
-                            }
+                            validateFirstName(newValue);
                         }}
                          />
                     </InputField>
