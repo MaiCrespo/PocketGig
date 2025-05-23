@@ -1,6 +1,6 @@
 "use client";
+import React from "react";
 import { useRouter } from "next/navigation";
-import "@/app/welcomeMessage/welcomeMessage.css";
 import Button from "@/components/Button/button.jsx";
 import styles from "@/app/globals.css";
 

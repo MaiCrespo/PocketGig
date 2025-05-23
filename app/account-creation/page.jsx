@@ -5,8 +5,17 @@ import InputField from "@/components/InputField";
 import "@/app/account-creation/account-creation.css";
 import Button from "@/components/Button/button.jsx";
 import { useRouter } from "next/navigation";
+import WelcomeMessage from "@/components/welcomeMessage";
+
 export default function AccountCreationPage(){
     const router = useRouter();
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [password, setPassword] = useState("");
+    const [retypePassword, setRetypePassword] = useState("");
+
     return(
         <div className="account-creation-page" style={{backgroundColor: "var(--white)"}}>
                <TopNav hideIcons={true} />
@@ -40,7 +49,7 @@ export default function AccountCreationPage(){
             <div className="buttonContainer">
             <Button 
             label={"Create Account"}
-            onClick={() => router.push("/home")}/>
+            onClick={() => router.push("/welcomeMessage")}/>
             </div>
        </div>
     
